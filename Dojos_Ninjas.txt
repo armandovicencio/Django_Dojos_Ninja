@@ -1,0 +1,33 @@
+In [2]: from dojo_ninjas_app.models import *
+
+In [3]: Dojo.objects.create(name="nampou", city="santiago", state="Chile")
+Out[3]: <Dojo: Dojo object (1)>
+
+In [4]: Dojo.objects.create(name="aikikai", city="tokio", state="japon")
+Out[4]: <Dojo: Dojo object (2)>
+
+In [5]: Dojo.objects.create(name="aikikaiNY", city="NY", state="eeuu")
+Out[5]: <Dojo: Dojo object (3)>
+
+In [6]: c = Dojo.objects.all()
+
+In [7]: c.delete()
+Out[7]: (3, {'dojo_ninjas_app.Dojo': 3})
+
+In [8]: Dojo.objects.create(name="nampou", city="santiago", state="Chile")
+Out[8]: <Dojo: Dojo object (4)>
+
+In [9]: Dojo.objects.create(name="aikikai", city="tokio", state="japon")
+Out[9]: <Dojo: Dojo object (5)>
+
+In [10]: Dojo.objects.create(name="aikikaiNY", city="NY", state="eeuu")
+Out[10]: <Dojo: Dojo object (6)>
+
+IN [11]: Ninjas.objects.filter(dojo=1)
+Out[11]: <QuerySet [<Ninjas: Ninjas object (1)>, <Ninjas: Ninjas object (2)>, <Ninjas: Ninjas object (3)>]>
+
+In [12]: Ninjas.objects.filter(dojo=2)
+Out[12]: <QuerySet [<Ninjas: Ninjas object (4)>, <Ninjas: Ninjas object (5)>, <Ninjas: Ninjas object (6)>]>
+
+In [13]: Ninjas.objects.last()
+Out[13]: <Ninjas: Ninjas object (10)>
